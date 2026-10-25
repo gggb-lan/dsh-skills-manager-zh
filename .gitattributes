@@ -1,0 +1,10 @@
+# 技能与脚本统一 LF，避免 Windows 检出后行尾不一致
+*.md text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.sh text eol=lf
+
+# 二进制
+*.png binary

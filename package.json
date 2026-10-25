@@ -1,0 +1,36 @@
+{
+  "name": "dsh-skills-manager",
+  "version": "0.2.3",
+  "description": "DSH 设置页 Skills 管理器：系统/用户技能分类展示，用户技能开关、编辑、删除、新建；内置 39 个中文技能，可一键安装。",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "skills",
+    "scripts",
+    "docs",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "install:skills": "node scripts/install-skills.mjs",
+    "verify:skills-zh": "node scripts/verify-skills-zh.mjs"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}
